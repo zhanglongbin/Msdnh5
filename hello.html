@@ -1,0 +1,50 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="uft-8"/>
+<title> 
+</title>
+<style>
+div{float:left;margin:10px;}
+#div1{width:50px;height:50px;background:red;}
+#div2{width:250px;height:180px;background:#ccc;display:none;}
+</style>
+<script>
+window.onload=function ()
+{
+var oDiv1=document.getElementById('div1');
+var oDiv2=document.getElementById('div2');
+var timer=null;
+oDiv1.onmouseover=function (){clearTimeout(timer);
+
+oDiv2.style.display='block';
+};
+oDiv1.onmouseout=function (){ 
+timer=setTimeout(function (){ oDiv2.style.display='none';},1000)
+};
+oDiv2.onmouseover=function ()
+{
+clearTimeout(timer);
+};
+oDiv2.onmouseout=function (){ 
+timer=setTimeout(function (){oDiv2.style.display='none';},1000)
+};
+};
+</script>
+</head>
+<BODY>
+
+<div id="div1">
+延时提示框
+
+
+</div>
+<div id="div2">
+
+
+
+</div>
+
+</BODY>
+
+</HTML>
